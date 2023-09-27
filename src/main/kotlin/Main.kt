@@ -54,12 +54,14 @@ fun main() {
     println(agoToText(seconds5))
     println(agoToText(seconds6))
 
-    val cardType = "MasterCard"
-    val totalTransfersThisMonth = 1000.0
-    val transferAmount = 500.0
+    val cardType = "MasterCard" // Здесь укажите тип карты ("MasterCard", "Maestro", или "VK Pay")
+    val totalTransfersThisMonth = 50000.0 // Здесь укажите сумму предыдущих переводов в этом месяце
+    val transferAmount = 80000.0 // Здесь укажите сумму совершаемого перевода
 
     val commission = PaymentCalculator.calculateCommission(cardType, totalTransfersThisMonth, transferAmount)
     println("Комиссия: $commission рублей")
+
+
 }
 
 
