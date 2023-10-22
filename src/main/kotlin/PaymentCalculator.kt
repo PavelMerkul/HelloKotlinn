@@ -29,6 +29,7 @@ class PaymentCalculator {
                         0.0 // Не нужно платить комиссию для Maestro и MasterCard до 75000
                     }
                 }
+
                 isExceedingDailyLimit -> 0.0 // VK Pay бесплатно, если превышен дневной лимит
                 isExceedingMonthlyLimit -> 0.0 // VK Pay бесплатно, если превышен месячный лимит
                 else -> calculateRegularCommission(transferAmount) // Обычная комиссия
@@ -36,9 +37,6 @@ class PaymentCalculator {
         }
 
         private fun calculateRegularCommission(transferAmount: Double): Double {
-            // Ваш код для расчета обычной комиссии
-            // Можете использовать TransferFeeCalculator.calculateFee(transferAmount)
-            // или другие правила расчета комиссии для других типов карт
             return TransferFeeCalculator.calculateFee(transferAmount)
         }
     }
