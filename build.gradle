@@ -1,9 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.9.10'
 }
-test {
-    useJUnit()
-}
 
 group = 'ru.netology'
 version = '1.0-SNAPSHOT'
@@ -11,13 +8,11 @@ version = '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+
 dependencies {
     testImplementation 'junit:junit:4.13'
 }
 
-test {
-    useJUnitPlatform()
-}
 
 kotlin {
     jvmToolchain(8)
